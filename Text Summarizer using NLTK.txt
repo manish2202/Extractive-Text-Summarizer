@@ -1,0 +1,81 @@
+#this is an extractive text summarization based on cosine similarity
+#cosine similarity is a measure of similarity between two non-zero vectors of an inner product space that measures the cosine of angle between them
+#angle will be zero if sentences are similar
+
+
+
+
+
+#importing all the libraries
+
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize, sent_tokenize
+
+
+
+#inputting the text
+
+text = """  """
+
+
+
+#tokenizing the text
+
+stopWords = set(stopwords.words("english")
+words = word_tokenize(text)
+
+#frequency table for score of each word
+
+freqTable = dict()
+for word in words:
+    word = word.lower()
+    if word in stopWords:
+	continue
+    if word in freqTable:
+        freqTable[word] +=1
+    else
+        freqTable[word] =1
+
+
+
+#score of each sentence
+
+sentences = sent_tokenize(text)
+sentenceValue = dict()
+
+for sentence in sentences:
+    for word, freq in freqTable.items():
+        if word in sentence.lower():
+           if sentence in sentenceValue:
+               sentenceValue[sentence] += freq
+           else:
+               sentenceValue[sentence] = freq
+
+
+sumValues = 0
+for sentence in sentenceValue:
+    sumValues += sentenceValue[sentence]
+
+
+
+#average value
+
+average = int(sumValues/len(sentenceValue))
+
+
+
+#storing sentence in the summary
+summary = ''
+for sentence in sentences:
+    if (sentence in sentenceValue) and (sentenceValue[sentence] > (1.2*average)):
+	summary += " " + sentence
+print(summary)
+
+
+
+  
+
+
+
+	
