@@ -22,7 +22,7 @@ text = """  """
 
 #tokenizing the text
 
-stopWords = set(stopwords.words("english")
+stopWords = set(stopwords.words("english"))
 words = word_tokenize(text)
 
 #frequency table for score of each word
@@ -34,7 +34,7 @@ for word in words:
 	continue
     if word in freqTable:
         freqTable[word] +=1
-    else
+    else:
         freqTable[word] =1
 
 
