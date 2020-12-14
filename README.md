@@ -1,23 +1,11 @@
-download and install nltk, punkt as follows:
-
-pip install nltk   (in prompt)
-
-nltk.download('punkt')   (in notebook)
 
      ****************************************
-
-  The program was created and ran on python 3.7
-
-     ****************************************
-     
-     
-     
      
 This is an extractive text summarization based on cosine similarity.
 Cosine similarity is a measure of similarity between two non-zero vectors of an inner product space that measures the cosine of angle between them.
 Angle will be zero if sentences are similar.
 
-     ***************************************************
+     *****************************************
 
 Below are the steps involved in the process (ensure that the packages are installed):
 I. importing all the libraries
